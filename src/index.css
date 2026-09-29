@@ -1,0 +1,484 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* GLOBAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Inter", sans-serif;
+  color: #111;
+  background: #d2d2d2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: #d2d2d2;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* SECTION 1 */
+
+.intro-section {
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  background: #d2d2d2;
+  position: relative;
+  padding: 7vh 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.intro-heading {
+  position: absolute;
+  top: 12%;
+  left: 8%;
+  z-index: 1;
+  max-width: 550px;
+}
+
+.small-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.intro-heading h1,
+.bottom-heading h2 {
+  font-size: clamp(48px, 6vw, 90px);
+  line-height: 0.98;
+  letter-spacing: -5px;
+  font-weight: 900;
+  margin-top: 25px;
+}
+
+.intro-heading h1 span,
+.bottom-heading h2 span {
+  color: #777;
+}
+
+.intro-description {
+  max-width: 360px;
+  margin-top: 25px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* TOP STATISTICS */
+
+.top-stats {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 28px;
+  width: min(650px, 55%);
+  margin-left: auto;
+  margin-top: 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.metric-card {
+  flex: 1;
+  min-width: 0;
+  min-height: 170px;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.metric-card h2 {
+  font-size: clamp(38px, 5vw, 65px);
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.metric-card p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.lime {
+  background: #d7ff36;
+  color: #111;
+}
+
+.dark {
+  background: #292929;
+  color: #fff;
+}
+
+.blue {
+  background: #60c4f4;
+  color: #111;
+}
+
+.orange {
+  background: #ff681e;
+  color: #111;
+}
+
+/* FOOTER LABELS */
+
+.intro-footer {
+  position: absolute;
+  bottom: 30px;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  z-index: 5;
+}
+
+/* SECTION 2: CAR BANNER */
+
+.car-banner {
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  position: relative;
+  overflow: hidden;
+  background: #1d1d1f;
+  isolation: isolate;
+}
+
+/* Full-width horizontal green strip */
+
+.green-panel {
+  position: absolute;
+  top: 38%;
+  left: 0;
+  width: 100%;
+  height: 32%;
+  background: #36d579;
+  z-index: -1;
+}
+
+/* Large WELCOME ITZFIZZ text */
+
+.banner-title-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.banner-title {
+  width: max-content;
+  white-space: nowrap;
+  font-size: clamp(100px, 13vw, 230px);
+  font-weight: 900;
+  letter-spacing: -8px;
+  line-height: 1;
+  color: #0b0b0b;
+  will-change: transform;
+}
+
+/* Car container */
+
+.car-track {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* IMPORTANT:
+   Do not apply top: 50% or translateY(-50%) here.
+   GSAP controls the transform of this element.
+*/
+
+.scroll-car {
+  display: block;
+  position: relative;
+  left: auto;
+  top: auto;
+
+  width: min(65vw, 1000px);
+  height: auto;
+  max-height: 65vh;
+
+  object-fit: contain;
+  object-position: center;
+
+  transform: none;
+  will-change: transform;
+}
+
+/* Banner footer */
+
+.banner-footer {
+  position: absolute;
+  bottom: 30px;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  z-index: 5;
+}
+
+/* SECTION 3: BOTTOM STATISTICS */
+
+.bottom-stats {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  background: #d2d2d2;
+  padding: 9vh 5vw 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bottom-heading {
+  margin-bottom: 45px;
+}
+
+.bottom-heading h2 {
+  font-size: clamp(42px, 6vw, 85px);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.bottom-card {
+  min-height: 190px;
+  padding: 30px;
+}
+
+.bottom-card h2 {
+  font-size: clamp(40px, 5vw, 65px);
+}
+
+/* FOOTER */
+
+.site-footer {
+  min-height: 100px;
+  padding: 30px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1d1d1f;
+  color: #fff;
+}
+
+.footer-logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.footer-logo span {
+  color: #36d579;
+}
+
+.site-footer > span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .intro-heading {
+    top: 10%;
+    left: 6%;
+  }
+
+  .intro-heading h1 {
+    font-size: clamp(44px, 7vw, 70px);
+    letter-spacing: -3px;
+  }
+
+  .top-stats {
+    width: 75%;
+    gap: 14px;
+  }
+
+  .metric-card {
+    padding: 22px;
+  }
+
+  .metric-card h2 {
+    font-size: clamp(35px, 5vw, 55px);
+  }
+
+  .scroll-car {
+    width: 85vw;
+  }
+
+  .banner-title {
+    font-size: 16vw;
+    letter-spacing: -5px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .intro-section {
+    padding: 30px 6%;
+    align-items: flex-end;
+  }
+
+  .intro-heading {
+    top: 12%;
+    left: 6%;
+    right: 6%;
+  }
+
+  .intro-heading h1 {
+    font-size: 48px;
+    letter-spacing: -3px;
+  }
+
+  .intro-description {
+    font-size: 13px;
+    max-width: 300px;
+  }
+
+  .top-stats {
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 45px;
+  }
+
+  .metric-card {
+    min-height: 130px;
+    padding: 16px;
+    border-radius: 9px;
+  }
+
+  .metric-card h2 {
+    font-size: 34px;
+    letter-spacing: -2px;
+  }
+
+  .metric-card p {
+    font-size: 11px;
+  }
+
+  .car-banner {
+    height: 80vh;
+    height: 80svh;
+  }
+
+  .green-panel {
+    top: 38%;
+    height: 30%;
+  }
+
+  .scroll-car {
+    width: 115vw;
+    max-width: none;
+    max-height: 45vh;
+  }
+
+  .banner-title {
+    font-size: 19vw;
+    letter-spacing: -3px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .bottom-heading {
+    margin-bottom: 30px;
+  }
+
+  .bottom-heading h2 {
+    font-size: 42px;
+    letter-spacing: -3px;
+  }
+
+  .bottom-card {
+    min-height: 140px;
+    padding: 16px;
+  }
+
+  .bottom-card h2 {
+    font-size: 34px;
+  }
+
+  .intro-footer,
+  .banner-footer {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .site-footer {
+    padding: 25px 6%;
+  }
+
+  .footer-logo {
+    font-size: 20px;
+  }
+
+  .site-footer > span {
+    font-size: 10px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-car,
+  .banner-title {
+    will-change: auto;
+  }
+}
